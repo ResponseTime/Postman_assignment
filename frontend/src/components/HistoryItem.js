@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useNavigate } from "react-router-dom"
 import headerContext from '../context/headerscontext'
 import bodyContext from '../context/bodycontext'
 const HistoryItem = (props) => {
-    const navigate = useNavigate()
     const headers = useContext(headerContext)
     const body = useContext(bodyContext)
     const [click, setClick] = useState(false)

@@ -46,8 +46,13 @@ app.post("/postman/serve", async (req, res) => {
 
 })
 app.get("/postman/history", async (req, res) => {
-    const data = await prisma.history.findMany()
-    res.json(data)
+    try {
+        const data = await prisma.history.findMany()
+        res.json(data)
+    }
+    catch (err: any) {
+        res.status(500).json({ message: err.message })
+    }
 })
 
 app.listen(8080, () => {

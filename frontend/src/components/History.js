@@ -9,8 +9,13 @@ const History = () => {
     const [testData, setTestData] = useState()
     useEffect(() => {
         const fetch = async () => {
-            const res = await axios.get("http://localhost:8080/postman/history")
-            setTestData(res.data)
+            try {
+                const res = await axios.get("http://localhost:8080/postman/history")
+                setTestData(res.data)
+            }
+            catch (err) {
+                console.error(err)
+            }
         }
         fetch()
     }, [])

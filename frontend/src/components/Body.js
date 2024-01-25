@@ -3,7 +3,6 @@ import bodyContext from '../context/bodycontext'
 const Body = () => {
     const context = useContext(bodyContext)
     const { body, setBody } = context
-    console.log(body)
     return (
         <div className="m-auto flex justify-center w-1/2 border-b-gray-900">
             <textarea placeholder={"Enter Post Body"}
